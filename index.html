@@ -652,6 +652,27 @@
         .project-image-wide {
             height: 281px;
             /* 500px * 9/16 = 281px for 16:9 */
+            background: linear-gradient(135deg,
+                    #1B4332 0%,
+                    #2d5a45 25%,
+                    #A8B5A1 75%,
+                    #c5d1bd 100%);
+            position: relative;
+        }
+
+        /* Decorative pattern overlay for LIFF background */
+        .project-image-wide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
         }
 
         .project-image img {
@@ -711,6 +732,8 @@
             transition: opacity 0.5s ease;
             object-fit: contain;
             object-position: center;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+            padding: 10px;
         }
 
         .slider-image.active {
@@ -1124,11 +1147,11 @@
                 <h1 class="hero-title">Paramet Takongkaew</h1>
                 <p class="hero-subtitle">
                     <i class="fas fa-laptop-code"></i>
-                    Aspiring Full-Stack Developer | Seeking Internship Opportunities
+                    Full-Stack Developer | Frontend Specialist
                 </p>
                 <p class="hero-education">
                     <i class="fas fa-graduation-cap"></i>
-                    4th-Year Software Engineering Student at Mae Fah Luang University
+                    Year 4 Software Engineering Student at Mae Fah Luang University
                 </p>
                 <p class="hero-description">
                     Passionate about creating elegant, efficient, and user-friendly web applications.
