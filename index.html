@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paramet Takongkaew - Full-Stack Developer Portfolio</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%231B4332'>P</text></svg>">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%231B4332'>P</text></svg>">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -543,11 +547,70 @@
             margin: 0 auto;
         }
 
+        .scroll-hint {
+            text-align: center;
+            color: var(--secondary-green);
+            font-size: 0.95rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .scroll-hint i {
+            margin-right: 0.5rem;
+            animation: slideRight 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes slideRight {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+        }
+
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
+            overflow-x: auto;
             gap: 2.5rem;
             margin-top: 3rem;
+            padding: 1rem 0 2rem 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .projects-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .projects-grid::-webkit-scrollbar-track {
+            background: rgba(27, 67, 50, 0.1);
+            border-radius: 10px;
+        }
+
+        .projects-grid::-webkit-scrollbar-thumb {
+            background: var(--secondary-green);
+            border-radius: 10px;
+        }
+
+        .projects-grid::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green);
         }
 
         .project-card {
@@ -558,6 +621,9 @@
             cursor: pointer;
             box-shadow: 0 5px 20px rgba(27, 67, 50, 0.08);
             position: relative;
+            min-width: 400px;
+            max-width: 400px;
+            flex-shrink: 0;
         }
 
         .project-card:hover {
@@ -842,6 +908,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -853,6 +920,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -864,6 +932,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -871,9 +940,12 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-30px) rotate(5deg);
             }
@@ -942,8 +1014,9 @@
                 justify-content: center;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-card {
+                min-width: 320px;
+                max-width: 320px;
             }
 
             .section-title {
@@ -976,6 +1049,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav id="navbar">
@@ -1012,7 +1086,7 @@
                     Year 4 Software Engineering Student at Mae Fah Luang University
                 </p>
                 <p class="hero-description">
-                    Passionate about creating elegant, efficient, and user-friendly web applications. 
+                    Passionate about creating elegant, efficient, and user-friendly web applications.
                     Experienced in building scalable solutions from concept to deployment.
                 </p>
                 <div class="contact-info">
@@ -1052,7 +1126,7 @@
                 About Me
             </h2>
             <p class="section-subtitle">Get to know me better</p>
-            
+
             <!-- Hobbies Section -->
             <div class="hobbies-section">
                 <h3 class="hobbies-title">
@@ -1060,7 +1134,10 @@
                     Beyond the Code
                 </h3>
                 <p class="hobbies-content">
-                    When I'm not coding, you'll find me <strong>driving</strong>, <strong>playing golf</strong> to relax, or behind the <strong>DJ controller</strong> spinning tracks across <strong>Hip Hop</strong>, <strong>Open Format</strong>, <strong>House</strong>, <strong>Afro House</strong>, and <strong>Baile Funk</strong>. Music and creativity fuel my passion both on and off the screen.
+                    When I'm not coding, you'll find me <strong>driving</strong>, <strong>playing golf</strong> to
+                    relax, or behind the <strong>DJ controller</strong> spinning tracks across <strong>Hip Hop</strong>,
+                    <strong>Open Format</strong>, <strong>House</strong>, <strong>Afro House</strong>, and <strong>Baile
+                        Funk</strong>. Music and creativity fuel my passion both on and off the screen.
                 </p>
                 <div class="hobbies-icons">
                     <div class="hobby-badge">
@@ -1123,6 +1200,9 @@
                 Featured Projects
             </h2>
             <p class="section-subtitle">Check out some of my recent work</p>
+            <p class="scroll-hint">
+                <i class="fas fa-arrow-right"></i> Scroll to explore all projects
+            </p>
 
             <div class="projects-grid">
                 <!-- Project 1: Isuzu Stock Management -->
@@ -1136,7 +1216,7 @@
                             Isuzu Stock Management System
                         </h3>
                         <p class="project-description">
-                            Comprehensive vehicle inventory management system with test drive booking functionality. 
+                            Comprehensive vehicle inventory management system with test drive booking functionality.
                             Features real-time stock tracking, dealer management, and automated scheduling.
                         </p>
                         <div class="tech-stack">
@@ -1146,7 +1226,8 @@
                             <span class="tech-tag"><i class="fas fa-network-wired"></i> REST API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/pxrxmett/isuzustock-management" target="_blank" class="project-link">
+                            <a href="https://github.com/pxrxmett/isuzustock-management" target="_blank"
+                                class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -1171,7 +1252,7 @@
                             Test Drive LIFF Application
                         </h3>
                         <p class="project-description">
-                            Interactive LINE mini-app for booking and managing vehicle test drives. 
+                            Interactive LINE mini-app for booking and managing vehicle test drives.
                             Seamless integration with LINE messaging platform for enhanced user experience.
                         </p>
                         <div class="tech-stack">
@@ -1181,7 +1262,8 @@
                             <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/pxrxmett/testdrive-liff-app" target="_blank" class="project-link">
+                            <a href="https://github.com/pxrxmett/testdrive-liff-app" target="_blank"
+                                class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -1199,7 +1281,7 @@
                             Test Drive Stock System
                         </h3>
                         <p class="project-description">
-                            Modern full-stack application for managing test drive vehicle inventory and scheduling. 
+                            Modern full-stack application for managing test drive vehicle inventory and scheduling.
                             Built with Nuxt.js for optimal performance and seamless user experience.
                         </p>
                         <div class="tech-stack">
@@ -1209,7 +1291,8 @@
                             <span class="tech-tag"><i class="fas fa-network-wired"></i> API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/pxrxmett/testdrive-stock-system" target="_blank" class="project-link">
+                            <a href="https://github.com/pxrxmett/testdrive-stock-system" target="_blank"
+                                class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -1227,7 +1310,7 @@
                             Hotel Platform (Talaysai)
                         </h3>
                         <p class="project-description">
-                            Modern hotel booking and management platform built with React and Vite. 
+                            Modern hotel booking and management platform built with React and Vite.
                             Features fast loading times, smooth animations, and intuitive user interface.
                         </p>
                         <div class="tech-stack">
@@ -1255,10 +1338,10 @@
                 Let's Work Together
             </h2>
             <p class="contact-description">
-                I'm always interested in hearing about new projects and opportunities. 
+                I'm always interested in hearing about new projects and opportunities.
                 Feel free to reach out if you'd like to connect!
             </p>
-            
+
             <div class="contact-details">
                 <div class="contact-detail-item">
                     <i class="fas fa-envelope"></i>
@@ -1291,12 +1374,12 @@
     <!-- Footer -->
     <footer>
         <p>
-            &copy; 2025 Paramet Takongkaew. Built with 
-            <i class="fas fa-heart" style="color: #A8B5A1;"></i> 
+            &copy; 2025 Paramet Takongkaew. Built with
+            <i class="fas fa-heart" style="color: #A8B5A1;"></i>
             and passion for code.
         </p>
         <p style="margin-top: 0.5rem; opacity: 0.8;">
-            Year 4 Software Engineering Student | Mae Fah Luang University | 
+            Year 4 Software Engineering Student | Mae Fah Luang University |
             <a href="https://github.com/pxrxmett">
                 <i class="fab fa-github"></i> GitHub
             </a>
@@ -1354,7 +1437,7 @@
         function showSlide(n) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
+
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
@@ -1374,10 +1457,10 @@
 
         // Add hover effect to project cards
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.zIndex = '10';
             });
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.zIndex = '1';
             });
         });
@@ -1397,7 +1480,7 @@
         const titleText = heroTitle.textContent;
         heroTitle.textContent = '';
         let i = 0;
-        
+
         function typeWriter() {
             if (i < titleText.length) {
                 heroTitle.textContent += titleText.charAt(i);
@@ -1405,8 +1488,9 @@
                 setTimeout(typeWriter, 100);
             }
         }
-        
+
         setTimeout(typeWriter, 500);
     </script>
 </body>
+
 </html>
